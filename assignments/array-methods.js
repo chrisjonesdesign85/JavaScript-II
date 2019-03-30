@@ -501,22 +501,51 @@ console.log("The total donations are :", (ticketPriceTotal))
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-//We need to get a list of all the emails.
-let runnerEmail = [];
-const emails = (object) => {
-    return object.email
-}
-runnerEmail = runners.filter(emails)
-console.log(runnerEmail)
+const students = [{
+        name: 'Chris Jones',
+        age: 33,
+        phone: '(215)34-5676',
+        id: 1
+    },
+
+    {
+        name: 'Elon Musk',
+        age: 47,
+        phone: '(215)17-5171',
+        id: 2
+    },
+    {
+        name: 'Jeff Bezos',
+        age: 55,
+        phone: '(215)22-5676',
+        id: 3
+    }
+]
+
+const studentNamesPhones = [];
+
+students.forEach(student => {
+    return studentNamesPhones.push(`Name: "${student.name}" Phone number: ${student.phone}`);
+})
+console.log(studentNamesPhones);
 
 
-// let fullName = [];
-// runners.forEach(function (object) {
-//     let name = object.first_name + " " + object.last_name;
-//     fullName.push(name)
-// })
-// console.log(fullName);
+
 
 // Problem 2
+averageStudentAge = students.reduce((averageAge, student) => {
+    return averageAge + student.age;
+}, 0);
+averageStudentAge = Math.floor(averageStudentAge / students.length);
+console.log(averageStudentAge); //45
 
-// Problem 3
+
+
+
+//Problem 3
+let studentsOver40 = students.filter(student => {
+    if (student.age > 40) {
+        return student;
+    }
+});
+console.log(studentsOver40);
