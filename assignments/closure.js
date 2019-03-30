@@ -1,5 +1,22 @@
+console.log("the closure starts here")
+
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+
+function showName(firstName, lastName) {
+  var nameIntro = "Your name is ";
+  //this inner function has access to the outer function's variables, including the parameters
+  function makeFullName() {
+    return nameIntro + firstName + " " + lastName;
+  }
+  return makeFullName();
+}
+
+console.log(showName("Chris", "Jones")); //Your name is Chris Jones
+//Log the full name to the console.
+
+
+
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
